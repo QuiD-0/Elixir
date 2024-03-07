@@ -14,18 +14,35 @@ defmodule Collections do
     |> Enum.map(&String.capitalize/1)
     |> Enum.sort()
   end
+
+  def listConnect(list1, list2), do: list1 ++ list2
 end
 
 IO.puts(Collections.sum([1, 2, 3, 4, 5]))
 
 list = [1, 2, 3, 4, 5]
-IO.puts(Collections.sum(list))
+
+Collections.sum(list)
+|> IO.puts()
 
 stringList = ["hello", "world"]
-IO.puts(Collections.join(stringList, ""))
+
+Collections.join(stringList, "")
+|> IO.puts()
 
 joinList = [3.14, :pie]
-IO.puts(Collections.join(joinList, ", "))
+
+Collections.join(joinList, ", ")
+|> IO.puts()
 
 string = "Hello, World"
-IO.puts(Collections.separate(string, ""))
+
+Collections.separate(string, "")
+|> IO.puts()
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+Collections.listConnect(list1, list2)
+|> Enum.join(", ")
+|> IO.puts()
