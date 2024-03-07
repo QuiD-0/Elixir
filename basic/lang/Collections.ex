@@ -16,6 +16,7 @@ defmodule Collections do
   end
 
   def listConnect(list1, list2), do: list1 ++ list2
+  def appendFirst(list, item), do: [item | list]
 end
 
 IO.puts(Collections.sum([1, 2, 3, 4, 5]))
@@ -44,5 +45,7 @@ list1 = [1, 2, 3]
 list2 = [4, 5, 6]
 
 Collections.listConnect(list1, list2)
-|> Enum.join(", ")
-|> IO.puts()
+|> IO.inspect()
+
+Collections.appendFirst(list1, 4)
+|> IO.inspect()
