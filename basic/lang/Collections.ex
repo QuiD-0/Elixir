@@ -49,3 +49,27 @@ Collections.listConnect(list1, list2)
 
 Collections.appendFirst(list1, 4)
 |> IO.inspect()
+
+map = %{
+  "a" => 1,
+  "b" => 2,
+  "c" => 3
+}
+
+Map.put(map, "d", 4)
+|> IO.inspect()
+
+map["a"]
+|> IO.inspect()
+
+atomMap = %{
+  a: 1,
+  b: 2,
+  c: 3
+}
+
+Map.put(atomMap, :d, 4)
+|> IO.inspect()
+
+atomMap.a
+|> IO.inspect()
