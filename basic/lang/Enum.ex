@@ -3,6 +3,8 @@ defmodule Command do
     map
     |> Enum.map(fn {_, value} -> value end)
   end
+
+  def now(), do: DateTime.utc_now() |> DateTime.add(9 * 60 * 60)
 end
 
 %{name: "quid", type: "enum"}
@@ -21,6 +23,5 @@ end
 Atom.to_charlist(:"An atom")
 |> IO.puts()
 
-# 현재 local 날짜와 시간을 출력
-DateTime.utc_now()
+Command.now()
 |> IO.inspect()
