@@ -5,7 +5,7 @@ defmodule UserName do
     %UserName{first_name: first_name, last_name: last_name}
   end
 
-  def new(first_name, last_name) do
+  def new(_, _) do
     raise ArgumentError, "First and last name must be strings"
   end
 end
@@ -16,6 +16,10 @@ defmodule User do
   def new(name, age, email)
       when is_struct(name, UserName) and is_integer(age) and is_binary(email) do
     %User{name: name, age: age, email: email, admin: false}
+  end
+
+  def new(_, _, _) do
+    raise ArgumentError, "Invalid arguments"
   end
 
   def rename(user, %{first_name: first, last_name: last}) do
