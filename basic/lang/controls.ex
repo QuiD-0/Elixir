@@ -21,6 +21,13 @@ defmodule Control do
       _ -> "Catch all"
     end
   end
+
+  def condition(value) do
+    cond do
+      value == 10 -> "Equal to 10"
+      true -> "Catch all"
+    end
+  end
 end
 
 Control.if_example("Hello, world!")
@@ -39,4 +46,13 @@ Control.case_example2({:ok, "Success!"})
 |> IO.inspect()
 
 Control.case_example2({:error})
+|> IO.inspect()
+
+Control.case_example2(:something_else)
+|> IO.inspect()
+
+Control.condition(10)
+|> IO.inspect()
+
+Control.condition({:fail, "Hello"})
 |> IO.inspect()
