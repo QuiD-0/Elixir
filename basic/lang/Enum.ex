@@ -25,3 +25,7 @@ Atom.to_charlist(:"An atom")
 
 Command.now()
 |> IO.inspect()
+
+[1, 2, 3, 4]
+|> Enum.map(&(&1 * 2))
+|> IO.inspect()
